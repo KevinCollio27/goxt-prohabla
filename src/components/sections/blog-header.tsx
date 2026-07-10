@@ -10,7 +10,8 @@ export default function BlogHeader() {
           {/* Columna izquierda: contenido */}
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-4">
-              <Badge className="text-sm h-auto py-1 px-3 border-0 w-fit bg-secondary text-navy">
+              <Badge className="text-sm h-auto py-1 px-3 border-0 w-fit gap-2 bg-secondary text-navy">
+                <span className="size-1.5 rounded-full bg-primary" />
                 Blog de ExpoTalento
               </Badge>
               <h1 className="text-4xl md:text-5xl font-medium tracking-tight leading-tight text-navy">

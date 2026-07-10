@@ -86,9 +86,12 @@ export default async function BlogPostPage({
   const post = await getPost(slug);
   if (!post) notFound();
 
-  const tags = post.tags
+  const allTags = post.tags
     ? post.tags.split(",").map((t) => t.trim()).filter(Boolean)
     : [];
+  const MAX_VISIBLE_TAGS = 5;
+  const tags = allTags.slice(0, MAX_VISIBLE_TAGS);
+  const extraTagsCount = allTags.length - tags.length;
 
   const description = post.content
     ? post.content.replace(/<[^>]*>/g, "").slice(0, 160).trim()
@@ -130,7 +133,7 @@ export default async function BlogPostPage({
         {/* Header — misma estructura que BlogHeader */}
         <section className="pt-8 md:pt-12 pb-12 md:pb-16">
           <div className="max-w-7xl mx-auto sm:px-16 px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
               {/* Columna izquierda */}
               <div className="flex flex-col gap-6">
@@ -146,10 +149,16 @@ export default async function BlogPostPage({
                   {tags.length > 0 && (
                     <div className="flex gap-2 flex-wrap">
                       {tags.map((tag) => (
-                        <Badge key={tag} className="text-sm h-auto py-1 px-3 border-0">
+                        <Badge key={tag} className="text-sm h-auto py-1 px-3 border-0 gap-2 bg-secondary text-navy">
+                          <span className="size-1.5 rounded-full bg-primary" />
                           {tag}
                         </Badge>
                       ))}
+                      {extraTagsCount > 0 && (
+                        <Badge className="text-sm h-auto py-1 px-3 border-0 bg-secondary text-navy">
+                          +{extraTagsCount}
+                        </Badge>
+                      )}
                     </div>
                   )}
 
@@ -169,7 +178,7 @@ export default async function BlogPostPage({
 
               {/* Columna derecha: thumbnail */}
               {post.thumbnail_url && (
-                <div className="relative h-80 md:h-120 rounded-2xl overflow-hidden border border-border shadow-sm">
+                <div className="relative aspect-video rounded-2xl overflow-hidden border border-border shadow-sm">
                   <Image
                     src={post.thumbnail_url}
                     alt={post.title}

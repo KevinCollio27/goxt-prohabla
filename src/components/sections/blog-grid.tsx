@@ -44,7 +44,8 @@ export default async function BlogGrid() {
 
         {/* Header */}
         <div className="flex flex-col gap-4 mb-12">
-          <Badge className="text-sm h-auto py-1 px-3 border-0 w-fit bg-secondary text-navy">
+          <Badge className="text-sm h-auto py-1 px-3 border-0 w-fit gap-2 bg-secondary text-navy">
+            <span className="size-1.5 rounded-full bg-primary" />
             Novedades ExpoTalento
           </Badge>
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-navy">
