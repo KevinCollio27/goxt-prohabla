@@ -37,6 +37,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# logos originales sin recortar (solo se usa la versión -trimmed en el sitio)
+/public/empresas/
+/public/colaboran/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
