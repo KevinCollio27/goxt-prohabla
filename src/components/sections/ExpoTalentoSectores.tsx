@@ -11,19 +11,19 @@ const EMPRESAS = getLogos("empresas-trimmed");
 const pillars = [
   {
     id: "comercio",
-    icon: <ShoppingCart className="size-5" aria-hidden />,
+    icon: <ShoppingCart className="size-7" strokeWidth={1.5} aria-hidden />,
     title: "Comercio",
     description: "Retail, ventas y atención al cliente",
   },
   {
     id: "logistica",
-    icon: <Truck className="size-5" aria-hidden />,
+    icon: <Truck className="size-7" strokeWidth={1.5} aria-hidden />,
     title: "Logística",
     description: "Transporte, distribución y cadena de suministro",
   },
   {
     id: "servicios",
-    icon: <Briefcase className="size-5" aria-hidden />,
+    icon: <Briefcase className="size-7" strokeWidth={1.5} aria-hidden />,
     title: "Servicios",
     description: "Administración, finanzas y soporte",
   },
@@ -50,12 +50,12 @@ export default function PowerSkillsPillars() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 *:text-center *:bg-muted">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 *:text-center">
           {pillars.map((pillar) => (
-            <Card key={pillar.id} className="group border-0 shadow-none">
+            <Card key={pillar.id} className="group border border-border bg-white shadow-sm hover:shadow-md transition-shadow rounded-2xl">
               <CardHeader className="pb-3">
-                <CardDecorator>{pillar.icon}</CardDecorator>
-                <h3 className="mt-6 font-medium">{pillar.title}</h3>
+                <SectorIcon>{pillar.icon}</SectorIcon>
+                <h3 className="mt-6 font-medium text-navy">{pillar.title}</h3>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">{pillar.description}</p>
@@ -80,6 +80,7 @@ export default function PowerSkillsPillars() {
                   alt={logo.name}
                   width={180}
                   height={48}
+                  style={{ width: "auto" }}
                   className="h-12 w-auto object-contain"
                 />
               </div>
@@ -91,14 +92,8 @@ export default function PowerSkillsPillars() {
   );
 }
 
-const CardDecorator = ({ children }: { children: ReactNode }) => (
-  <div className="mask-radial-from-40% mask-radial-to-60% relative mx-auto size-36 duration-200 [--color-border:color-mix(in_oklab,var(--color-zinc-950)10%,transparent)] group-hover:[--color-border:color-mix(in_oklab,var(--color-zinc-950)20%,transparent)] dark:[--color-border:color-mix(in_oklab,var(--color-white)15%,transparent)] dark:group-hover:[--color-border:color-mix(in_oklab,var(--color-white)20%,transparent)]">
-    <div
-      aria-hidden
-      className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:24px_24px] dark:opacity-50"
-    />
-    <div className="bg-muted absolute inset-0 m-auto flex size-12 items-center justify-center border-l border-t">
-      {children}
-    </div>
+const SectorIcon = ({ children }: { children: ReactNode }) => (
+  <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-linear-to-br from-primary/20 via-primary/10 to-transparent text-primary">
+    {children}
   </div>
 );

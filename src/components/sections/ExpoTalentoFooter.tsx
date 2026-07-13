@@ -214,6 +214,7 @@ const Footer = () => {
                     alt={logo.name}
                     width={140}
                     height={36}
+                    style={{ width: "auto" }}
                     className="h-9 w-auto object-contain"
                   />
                 </div>
