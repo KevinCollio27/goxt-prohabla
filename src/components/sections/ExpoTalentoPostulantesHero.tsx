@@ -3,16 +3,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 const LOGOS_DESTACADOS = [
-  ...[
-    "BURGER KING",
-    "MCDONALDS",
-    "STARBUCKS",
-    "KFC",
-    "HEINEKEN",
-    "JUAN VALDEZ",
-  ].map((name) => ({ src: `/empresas-trimmed/${name}.png`, name })),
-  { src: "/empresas-trimmed/goxt-negro_13032026183533.png", name: "GOxT" },
-];
+  "BURGER KING",
+  "MCDONALDS",
+  "STARBUCKS",
+  "KFC",
+  "HEINEKEN",
+  "JUAN VALDEZ",
+].map((name) => ({ src: `/empresas-trimmed/${name}.png`, name }));
 
 const STATS = [
   {
@@ -70,7 +67,7 @@ export default function ExpoTalentoHero() {
               <p className="text-sm font-medium tracking-wide text-muted-foreground uppercase">
                 Empresas que confían en ExpoTalento
               </p>
-              <div className="flex flex-nowrap items-center gap-x-6 overflow-x-auto">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
                 {LOGOS_DESTACADOS.map((logo) => (
                   <a
                     key={logo.src}

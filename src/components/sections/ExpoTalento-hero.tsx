@@ -88,7 +88,7 @@ export default function ExpoTalentoHero() {
               <p className="text-sm font-medium tracking-wide text-muted-foreground uppercase">
                 Empresas que confían en ExpoTalento
               </p>
-              <div className="flex flex-nowrap items-center gap-x-6 overflow-x-auto">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
                 {LOGOS_DESTACADOS.map((logo) => (
                   <a
                     key={logo.src}
