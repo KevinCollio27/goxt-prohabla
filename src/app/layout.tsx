@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
+import Script from "next/script";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -29,6 +30,11 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col" style={{ background: "#F7FBFE" }}>
         <Navbar />
         {children}
+        <Script
+          src="https://api-crm.goxt.io/api/widget/embed.js"
+          data-api-key="wk_f8c21837b9b4027d0e1f4e32d87eb2f670dc4ddd2550e7f1"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
