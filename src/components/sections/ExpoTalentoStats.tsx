@@ -28,7 +28,11 @@ const stats = [
 
 export default function PowerSkillsStats() {
   return (
-    <section className="py-16 md:py-24">
+    <section
+    className="relative isolate overflow-hidden py-16 md:py-24"
+    style={{ background: "#FFFFFF" }}
+    >
+      <div className="page-bg-grid" />
       <div className="max-w-7xl mx-auto sm:px-16 px-4">
         <div className="flex flex-col gap-4">
           <Badge className="text-sm h-auto py-1 px-3 border-0 w-fit gap-2 bg-secondary text-navy">

@@ -39,7 +39,10 @@ export default async function BlogGrid() {
   const posts = await getPosts();
 
   return (
-    <section className="py-16 md:py-24">
+    <section
+    className="relative isolate overflow-hidden py-16 md:py-24"
+    style={{ background: "#FFFFFF" }}>
+      <div className="page-bg-grid" />
       <div className="max-w-7xl mx-auto sm:px-16 px-4">
 
         {/* Header */}

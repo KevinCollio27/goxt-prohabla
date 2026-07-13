@@ -41,7 +41,11 @@ export default function Testimonials() {
     const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
     return (
-        <section ref={sectionRef}>
+        <section ref={sectionRef}
+            className="relative isolate overflow-hidden"
+            style={{ background: "#FFFFFF" }}
+        >
+            <div className="page-bg-grid" />
             <div className="max-w-7xl mx-auto sm:px-16 px-4 pt-12">
                 <motion.div
                     initial={{ opacity: 0, y: -40 }}

@@ -68,10 +68,15 @@ const footerSections = [
 
 const Footer = () => {
   return (
-    <footer className="py-8">
+    <footer
+    className="relative overflow-hidden py-8"
+    style={{ background: "#FFFFFF" }}>
+      <div className="page-bg-grid" />
       <div className="max-w-7xl xl:px-16 lg:px-8 px-4 mx-auto">
         <div className="flex flex-col gap-6 sm:gap-8">
-          <div className="py-8 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 lg:grid-cols-12 gap-x-8 gap-y-8 px-6 xl:px-0">
+          <div 
+          className="py-8 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 lg:grid-cols-12 gap-x-8 gap-y-8 px-6 xl:px-0"
+          >
 
             {/* Logo + tagline + redes */}
             <div className="col-span-full lg:col-span-4">
@@ -166,24 +171,40 @@ const Footer = () => {
 
           {/* Aliados y colaboradores */}
           <div className="flex flex-col gap-6 border-t border-border pt-8">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
               <p className="text-xs font-medium tracking-wide text-muted-foreground">
                 Aliados y colaboradores
               </p>
-              <a
-                href="https://goxt.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <p className="text-xs text-muted-foreground">Impulsado con tecnología de</p>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/empresas-trimmed/goxt-negro_13032026183533.png"
-                  alt="GOxT"
-                  className="h-5 w-auto object-contain"
-                />
-              </a>
+              <div className="flex flex-col items-start sm:items-end gap-2">
+                <a
+                  href="https://goxt.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <p className="text-xs text-muted-foreground">Impulsado con tecnología de</p>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/empresas-trimmed/goxt-negro_13032026183533.png"
+                    alt="GOxT"
+                    className="h-5 w-auto object-contain"
+                  />
+                </a>
+                <a
+                  href="https://nodo.goxt.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <p className="text-xs text-muted-foreground">Impulsado por</p>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/Nodo.svg"
+                    alt="Nodo"
+                    className="h-7 w-auto object-contain"
+                  />
+                </a>
+              </div>
             </div>
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
               {COLABORADORES.map((logo) => (

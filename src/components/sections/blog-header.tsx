@@ -3,7 +3,11 @@ import { Badge } from "@/components/ui/badge";
 
 export default function BlogHeader() {
   return (
-    <section className="pt-8 md:pt-12 pb-16 md:pb-24">
+    <section
+    className="relative isolate overflow-hidden pt-8 md:pt-12 pb-16 md:pb-24"
+    style={{ background: "#FFFFFF" }}
+    >
+      <div className="page-bg-grid" />
       <div className="max-w-7xl mx-auto sm:px-16 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 

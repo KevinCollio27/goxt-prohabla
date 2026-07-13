@@ -9,12 +9,15 @@ export default function CTASection() {
   const ref = useRef(null);
 
   return (
-    <section>
+    <section
+      className="relative isolate overflow-hidden"
+      style={{ background: "#FFFFFF" }}
+    >
+      <div className="page-bg-grid" />
       <div className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto sm:px-16 px-4">
           <div
             ref={ref}
-            className="relative overflow-hidden min-h-96 flex items-center justify-center px-6 border border-border rounded-3xl before:absolute before:w-full before:h-4/5 before:bg-linear-to-r before:from-sky-100 before:from-15% before:via-white before:via-55% before:to-amber-100 before:to-90% before:rounded-full before:top-24 before:blur-3xl before:-z-10 dark:before:from-sky-400/10 dark:before:from-40% dark:before:via-black dark:before:via-55% dark:before:to-amber-300/10 dark:before:to-60% dark:before:rounded-full dark:before:-z-10"
           >
             <motion.div
               initial={{ y: "5%", opacity: 0 }}
@@ -27,21 +30,13 @@ export default function CTASection() {
                   ¿Listo para ser parte de ExpoTalento 2026?
                 </h2>
                 <p className="max-w-2xl mx-auto text-muted-foreground">
-                  ¿Busca empleo? Postule su perfil. ¿Busca talento? Registre a su empresa.
+                  Conéctate con empresas, descubre oportunidades y da el siguiente paso en tu carrera profesional. ¡No pierdas la oportunidad de crecer!
                 </p>
               </div>
-              <a href="#">
+              <a href="#ExpoTalentoHero" className="group relative">
                 <Button className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer">
                   <span className="relative z-10 transition-all duration-500">
-                    Quiero Postular
-                  </span>
-                  <div className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
-                    <ArrowUpRight size={16} />
-                  </div>
-                </Button>
-                <Button className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer">
-                  <span className="relative z-10 transition-all duration-500">
-                    Quiero Participar
+                    Estoy Interesado
                   </span>
                   <div className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
                     <ArrowUpRight size={16} />

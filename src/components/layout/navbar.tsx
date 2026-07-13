@@ -78,14 +78,15 @@ export default function Navbar() {
         className={cn(
           "w-full max-w-6xl flex items-center h-fit justify-between gap-3.5 lg:gap-6 transition-all duration-500",
           sticky
-            ? "p-2.5 bg-background/60 backdrop-blur-lg border border-border/40 shadow-2xl shadow-primary/5 rounded-full"
-            : "bg-transparent border-transparent"
+            ? "p-2.5 bg-white border border-border shadow-2xl shadow-primary/5 rounded-full"
+            : "p-2.5 bg-white border border-border shadow-lg shadow-navy/5 rounded-full"
         )}
       >
         <LogoLockup />
 
         {/* Desktop Nav */}
-        <NavigationMenu className="max-lg:hidden bg-muted p-0.5 rounded-full">
+        <NavigationMenu className="max-lg:hidden bg-muted p-0.5 rounded-full"
+        >
           <NavigationMenuList className="flex gap-0">
             {navItems.map((item) => (
               <NavigationMenuItem key={item.title}>

@@ -26,7 +26,7 @@ export default function RootLayout({
           <script src="https://tweakcn.com/live-preview.min.js" />
         </head>
       )}
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col" style={{ background: "#F7FBFE" }}>
         <Navbar />
         {children}
       </body>

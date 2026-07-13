@@ -14,9 +14,11 @@ import { Badge } from "../ui/badge";
 export default function ExpoTalentoFAQ() {
   return (
     <section
-      className="bg-background section-padding-y"
+      style={{ background: "#FFFFFF" }}
+      className="relative isolate overflow-hidden bg-background section-padding-y"
       aria-labelledby="faq-heading"
     >
+      <div className="page-bg-grid" />
       <div className="container-padding-x mx-auto flex max-w-5xl flex-col gap-10 md:gap-12">
         <div className="section-title-gap-lg flex flex-col items-center text-center">
           <Badge className="text-sm h-auto py-1 px-3 border-0 w-fit gap-2 bg-secondary text-navy">

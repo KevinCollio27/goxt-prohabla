@@ -52,7 +52,10 @@ export default function ExpoTalentoContact() {
   };
 
   return (
-    <section className="pt-10 md:pt-16 pb-32">
+    <section
+    className="relative isolate overflow-hidden pt-10 md:pt-16 pb-32"
+    style={{ background: "#FFFFFF" }}>
+      <div className="page-bg-grid" />
       <div className="max-w-7xl mx-auto sm:px-16 px-4">
         <div className="mx-auto flex max-w-6xl flex-col gap-16 lg:flex-row lg:gap-24">
 
@@ -71,7 +74,7 @@ export default function ExpoTalentoContact() {
           {/* Columna derecha — formulario */}
           <div className="flex-1">
             {submitted ? (
-              <div className="flex flex-col gap-6 rounded-xl bg-secondary/30 border border-border p-8 md:p-10 h-full justify-center items-center text-center">
+              <div className="flex flex-col gap-6 rounded-xl bg-white border border-border p-8 md:p-10 h-full justify-center items-center text-center">
                 <CheckCircleIcon className="size-12 text-green-500" />
                 <div>
                   <h2 className="text-xl font-semibold text-navy mb-2">¡Listo! Confirmamos tu asistencia.</h2>
@@ -90,7 +93,7 @@ export default function ExpoTalentoContact() {
             ) : (
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="flex flex-col gap-6 rounded-xl bg-secondary/30 border border-border p-8 md:p-10"
+                className="flex flex-col gap-6 rounded-xl bg-white border border-border p-8 md:p-10"
               >
                 <div>
                   <h2 className="text-xl font-semibold text-navy">
