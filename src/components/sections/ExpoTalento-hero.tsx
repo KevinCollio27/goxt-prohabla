@@ -1,4 +1,5 @@
 import { ArrowRight, Briefcase, User } from "lucide-react";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -75,7 +76,7 @@ export default function ExpoTalentoHero() {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {STATS.map((stat) => (
                 <div key={stat.id} className="flex flex-col gap-1.5">
                   <span className="text-xl md:text-2xl font-bold">{stat.value}</span>
@@ -97,10 +98,11 @@ export default function ExpoTalentoHero() {
                     rel="noopener noreferrer"
                     className="flex shrink-0 items-center justify-center"
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       src={logo.src}
                       alt={logo.name}
+                      width={140}
+                      height={36}
                       className="h-9 w-auto object-contain"
                     />
                   </a>

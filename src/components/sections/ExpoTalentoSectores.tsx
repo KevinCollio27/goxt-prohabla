@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { User, Lightbulb, Rocket, Users, GraduationCap, Briefcase, Truck, ShoppingCart } from "lucide-react";
 import { ReactNode } from "react";
+import Image from "next/image";
 import { Marquee } from "@/components/shadcn-space/animations/marquee";
 import { getLogos } from "@/lib/logos";
 
@@ -74,10 +75,11 @@ export default function PowerSkillsPillars() {
           >
             {EMPRESAS.map((logo) => (
               <div key={logo.src} className="flex items-center justify-center mx-8">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.name}
+                  width={180}
+                  height={48}
                   className="h-12 w-auto object-contain"
                 />
               </div>

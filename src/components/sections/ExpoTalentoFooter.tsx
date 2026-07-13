@@ -209,10 +209,11 @@ const Footer = () => {
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
               {COLABORADORES.map((logo) => (
                 <div key={logo.src} className="flex items-center justify-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={logo.src}
                     alt={logo.name}
+                    width={140}
+                    height={36}
                     className="h-9 w-auto object-contain"
                   />
                 </div>
