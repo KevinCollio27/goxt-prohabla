@@ -53,7 +53,7 @@ export default function ExpoTalentoHero() {
   return (
     <section
       id="ExpoTalentoHero"
-      className="relative isolate overflow-hidden pt-10 md:pt-16 pb-16 md:pb-24"
+      className="relative isolate overflow-hidden scroll-mt-20 pt-10 md:pt-16 pb-16 md:pb-24"
       style={{ background: "#F7FBFE" }}
     >
       <div className="page-bg-grid" />

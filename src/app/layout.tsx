@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import Script from "next/script";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site-config";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -10,9 +11,32 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ExpoTalento 2026 | Prohabla",
-  description:
-    "La Feria ExpoTalento 2026 conecta a estudiantes, egresados y empresas en un mismo lugar.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "ExpoTalento 2026 - UTN",
+    template: "%s | ExpoTalento 2026",
+  },
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "ExpoTalento 2026 - UTN",
+    description: SITE_DESCRIPTION,
+    url: "/",
+    siteName: SITE_NAME,
+    locale: "es_CR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ExpoTalento 2026 - UTN",
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
