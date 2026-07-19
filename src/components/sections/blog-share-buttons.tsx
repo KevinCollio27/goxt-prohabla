@@ -7,6 +7,9 @@ import { cn } from "@/lib/utils";
 
 interface ShareButtonsProps {
   title: string;
+  url?: string;
+  className?: string;
+  showLabel?: boolean;
 }
 
 const shareItems = [
@@ -33,10 +36,10 @@ const shareItems = [
   },
 ];
 
-export default function ShareButtons({ title }: ShareButtonsProps) {
+export default function ShareButtons({ title, url, className, showLabel = true }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
 
-  const getUrl = () => window.location.href;
+  const getUrl = () => url ?? window.location.href;
 
   const handleShare = (getHref: (t: string, u: string) => string) => {
     window.open(getHref(title, getUrl()), "_blank", "noopener,noreferrer");
@@ -52,8 +55,8 @@ export default function ShareButtons({ title }: ShareButtonsProps) {
     "w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors cursor-pointer";
 
   return (
-    <div className="flex items-center gap-2 mt-1">
-      <span className="text-xs text-muted-foreground">Compartir:</span>
+    <div className={cn("flex items-center gap-2 mt-1", className)}>
+      {showLabel && <span className="text-xs text-muted-foreground">Compartir:</span>}
       {shareItems.map((item) => (
         <button
           key={item.label}
