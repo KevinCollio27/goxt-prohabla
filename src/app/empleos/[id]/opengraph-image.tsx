@@ -36,20 +36,21 @@ export default async function OpengraphImage({ params }: OpengraphImageProps) {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: 72,
+          alignItems: "center",
+          padding: 80,
+          gap: 56,
           background: "#F7FBFE",
         }}
       >
         <div
           style={{
             display: "flex",
+            flexShrink: 0,
             background: "#ffffff",
-            borderRadius: 24,
-            padding: 24,
-            width: 200,
-            height: 100,
+            borderRadius: 32,
+            padding: 32,
+            width: 240,
+            height: 240,
             alignItems: "center",
             justifyContent: "center",
             boxShadow: "0 10px 40px rgba(27,42,94,0.12)",
@@ -57,20 +58,20 @@ export default async function OpengraphImage({ params }: OpengraphImageProps) {
         >
           <img
             src={logoSrc}
-            width={152}
-            height={52}
+            width={176}
+            height={176}
             style={{ objectFit: "contain" }}
           />
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          <div style={{ display: "flex", fontSize: 30, color: "#f5871f", fontWeight: 600 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <div style={{ display: "flex", fontSize: 32, color: "#f5871f", fontWeight: 600 }}>
             {empresa}
           </div>
           <div
             style={{
               display: "flex",
-              fontSize: 58,
+              fontSize: 52,
               color: "#1b2a5e",
               fontWeight: 600,
               lineHeight: 1.15,
