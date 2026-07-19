@@ -1,4 +1,4 @@
-export const SITE_URL = "https://prohabla.org";
+export const SITE_URL = "https://www.prohabla.org";
 export const SITE_NAME = "ExpoTalento UTN 2026";
 export const SITE_DESCRIPTION =
   "La Feria ExpoTalento 2026 conecta a estudiantes, egresados y empresas en un mismo lugar. Miércoles 29 de julio, Sede Central UTN Alajuela, entrada libre.";
