@@ -33,7 +33,7 @@ function haceDias(dias: number) {
 export const DEFAULT_LOGO_URL = "/empresas-trimmed/goxt-negro_13032026183533.png";
 
 export const POSTULACION_FORM_URL =
-  "https://crm.goxt.io/widget/form/formulario-de-inscripcin-feria-de-empleo-utn-2026";
+  "https://crm.goxt.io/widget/form/formulario-de-postulacion";
 
 /**
  * Opciones reales del formulario "Formulario Vacantes Disponibles" (custom_fields
