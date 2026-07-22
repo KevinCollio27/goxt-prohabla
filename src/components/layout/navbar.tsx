@@ -21,6 +21,7 @@ import { motion } from "motion/react";
 
 const navItems = [
   { title: "Inicio", href: "/" },
+  { title: "Empleos", href: "/empleos" },
   { title: "Contacto", href: "/confirmar" },
   { title: "Blog", href: "/blog" },
 ];
