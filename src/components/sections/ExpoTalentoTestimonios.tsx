@@ -19,18 +19,18 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
     {
-        quote: "Participar en la Feria de Empleo de la UTN fue una experiencia sumamente positiva: nos permitió fortalecer nuestra marca empleadora y establecer contacto directo con candidatos interesados en nuevas oportunidades laborales.",
-        author: "Roxinia Castillo",
-        role: "Coordinadora de Recursos Humanos · Carnes Castillo",
-        image: "/Roxinia.jpg",
+        quote: "La actividad facilitó el acercamiento con estudiantes y profesionales de distintas áreas, fortaleciendo la relación entre la empresa y el sector académico. Una iniciativa de gran valor tanto para las empresas como para quienes buscan empleo.",
+        author: "Helena Góngora",
+        role: "Asistente de Recursos Humanos · Carnes Castillo",
+        image: "/HelenaCarnesCastillo.png",
         logoSrc: "/empresas-trimmed/CARNES CASTILLO.png",
         logoAlt: "Carnes Castillo",
     },
     {
-        quote: "La actividad facilitó el acercamiento con estudiantes y profesionales de distintas áreas, fortaleciendo la relación entre la empresa y el sector académico. Una iniciativa de gran valor tanto para las empresas como para quienes buscan empleo.",
-        author: "Helena Góngora",
-        role: "Asistente de Recursos Humanos · Carnes Castillo",
-        image: "/Helena.jpg",
+        quote: "Participar en la Feria de Empleo de la UTN fue una experiencia sumamente positiva: nos permitió fortalecer nuestra marca empleadora y establecer contacto directo con candidatos interesados en nuevas oportunidades laborales.",
+        author: "Roxinia Castillo",
+        role: "Coordinadora de Recursos Humanos · Carnes Castillo",
+        image: "/Roxinia.jpg",
         logoSrc: "/empresas-trimmed/CARNES CASTILLO.png",
         logoAlt: "Carnes Castillo",
     },

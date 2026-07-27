@@ -22,11 +22,11 @@ export default function ExpoTalentoContact() {
           {/* Columna derecha — formulario */}
           <div className="flex flex-1 flex-col gap-8">
             <iframe
-              src="https://crm.goxt.io/widget/form/forms-contacto"
+              src="https://crm.goxt.io/widget/form/formulario-de-confirmacin-de-asistencia-a-expotalento-2026"
               width="100%"
               height="850"
               style={{ border: "none", borderRadius: "16px" }}
-              title="Forms Contacto"
+              title="Formulario de Confirmación asistencia a ExpoTalento 2026."
             />
           </div>
         </div>

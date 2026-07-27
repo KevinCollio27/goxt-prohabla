@@ -141,10 +141,6 @@ export function VacancyPreview({ vacante }: VacancyPreviewProps) {
             <dd className="font-medium text-foreground">{formatList(vacante.categoria)}</dd>
           </div>
           <div className="flex justify-between gap-2 sm:flex-col sm:gap-0.5">
-            <dt className="text-muted-foreground">Cantidad de vacantes</dt>
-            <dd className="font-medium text-foreground">{vacante.cantidadVacantes}</dd>
-          </div>
-          <div className="flex justify-between gap-2 sm:flex-col sm:gap-0.5">
             <dt className="text-muted-foreground">Tipo de jornada</dt>
             <dd className="font-medium text-foreground">{formatList(vacante.tipoJornada)}</dd>
           </div>
