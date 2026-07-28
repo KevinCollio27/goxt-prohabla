@@ -37,7 +37,7 @@ export function VacancyList({ vacantes, selectedId, onSelect }: VacancyListProps
   });
 
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex h-full min-w-0 flex-col">
       <div className="px-5 pt-5 pb-3">
         <h2 className="text-lg font-semibold text-navy">
           Vacantes Disponibles ({vacantes.length})

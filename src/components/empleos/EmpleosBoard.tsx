@@ -31,7 +31,7 @@ export function EmpleosBoard({ vacantes, initialSelectedId }: EmpleosBoardProps)
     <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-border bg-white shadow-md lg:h-full lg:min-h-0 lg:grid-cols-[440px_1fr]">
       <div
         className={cn(
-          "lg:flex lg:min-h-0 lg:border-r lg:border-border",
+          "lg:flex lg:min-h-0 lg:min-w-0 lg:border-r lg:border-border",
           mobileView === "detail" ? "hidden" : "flex"
         )}
       >
@@ -40,7 +40,7 @@ export function EmpleosBoard({ vacantes, initialSelectedId }: EmpleosBoardProps)
 
       <div
         className={cn(
-          "flex-col lg:flex lg:min-h-0",
+          "flex-col lg:flex lg:min-h-0 lg:min-w-0",
           mobileView === "detail" ? "flex" : "hidden"
         )}
       >
