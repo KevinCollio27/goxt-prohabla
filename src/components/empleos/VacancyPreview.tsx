@@ -12,6 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import ShareButtons from "@/components/sections/blog-share-buttons";
 import {
   DEFAULT_LOGO_URL,
+  GOXT_LOGO_URL,
   POSTULACION_FORM_URL,
   formatDate,
   formatList,
@@ -182,7 +183,7 @@ export function VacancyPreview({ vacante }: VacancyPreviewProps) {
         >
           <p className="text-xs text-muted-foreground">Impulsado con tecnología de</p>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={DEFAULT_LOGO_URL} alt="GOxT" className="h-4 w-auto object-contain" />
+          <img src={GOXT_LOGO_URL} alt="GOxT" className="h-4 w-auto object-contain" />
         </a>
       </div>
     </div>

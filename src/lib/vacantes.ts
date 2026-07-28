@@ -30,7 +30,9 @@ function haceDias(dias: number) {
   return new Date(Date.now() - dias * 24 * 60 * 60 * 1000).toISOString();
 }
 
-export const DEFAULT_LOGO_URL = "/empresas-trimmed/goxt-negro_13032026183533.png";
+export const DEFAULT_LOGO_URL = "/Logo ExpoTalento.png";
+
+export const GOXT_LOGO_URL = "/empresas-trimmed/goxt-negro_13032026183533.png";
 
 export const POSTULACION_FORM_URL =
   "https://crm.goxt.io/widget/form/formulario-de-postulacion";
