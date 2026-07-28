@@ -43,7 +43,7 @@ export default function PowerSkillsPillars() {
             Empresas Participantes ExpoTalento 2026
           </Badge>
           <h2 className="text-balance text-4xl font-medium tracking-tight md:text-5xl text-navy">
-            Más de 20 empresas te esperan en ExpoTalento 2026
+            Más de 90 empresas te esperan en ExpoTalento 2026
           </h2>
           <p className="text-muted-foreground max-w-md">
             Conoce a las empresas de los sectores de comercio, logística y servicios que estarán presentes en la feria.

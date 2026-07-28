@@ -15,7 +15,7 @@ const LOGOS_DESTACADOS = [
 const STATS = [
   {
     id: "empresas",
-    value: "+20 empresas",
+    value: "+90 empresas",
     label: "Podran ver tu perfil",
   },
   {

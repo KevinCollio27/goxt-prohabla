@@ -39,7 +39,7 @@ export default function ExpoTalentoFAQ() {
               ¿Qué es la Feria de Empleo ExpoTalento UTN 2026?
             </AccordionTrigger>
             <AccordionContent className="text-muted-foreground text-sm">
-              Es la 11.ª edición de la feria de empleo organizada por la carrera de Administración y Gestión de Recursos Humanos de la UTN. Conecta a estudiantes, egresados y profesionales con más de 20 empresas de los sectores de comercio, logística y servicios.
+              Es la 11.ª edición de la feria de empleo organizada por la carrera de Administración y Gestión de Recursos Humanos de la UTN. Conecta a estudiantes, egresados y profesionales con más de 90 empresas de los sectores de comercio, logística y servicios.
             </AccordionContent>
           </AccordionItem>
 
