@@ -7,23 +7,22 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import ShareButtons from "@/components/sections/blog-share-buttons";
 
-const BLOG_API = `https://api-crm.goxt.io/api/blog-widget/${process.env.BLOG_API_KEY}/posts`;
+const EVENTS_API = `https://api-crm.goxt.io/api/blog-widget/${process.env.EVENTS_API_KEY}/posts`;
 
-interface BlogPost {
+interface EventPost {
   title: string;
   slug: string;
   content: string;
   thumbnail_url: string;
   tags: string;
   published_at: string;
-  author: { name: string };
 }
 
-async function getPost(slug: string): Promise<BlogPost | null> {
+async function getEvent(slug: string): Promise<EventPost | null> {
   try {
-    // Sin cache: thumbnail_url es una URL firmada de S3 que expira en 1h.
-    // Cachear la página dejaría URLs vencidas servidas hasta la próxima revalidación.
-    const res = await fetch(`${BLOG_API}/${slug}`, { cache: "no-store" });
+    // thumbnail_url es una URL pública estable (no expira): se puede revalidar
+    // cada cierto tiempo en vez de pedir siempre datos frescos.
+    const res = await fetch(`${EVENTS_API}/${slug}`, { next: { revalidate: 300 } });
     if (!res.ok) return null;
     const json = await res.json();
     return json.data ?? null;
@@ -38,33 +37,32 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPost(slug);
+  const event = await getEvent(slug);
 
-  if (!post) return { title: "Post no encontrado" };
+  if (!event) return { title: "Evento no encontrado" };
 
-  const description = post.content
-    ? post.content.replace(/<[^>]*>/g, "").slice(0, 160).trim()
-    : (post.tags ?? "");
+  const description = event.content
+    ? event.content.replace(/<[^>]*>/g, "").slice(0, 160).trim()
+    : (event.tags ?? "");
 
   return {
-    title: post.title,
+    title: event.title,
     description,
     openGraph: {
-      title: post.title,
+      title: event.title,
       description,
-      url: `/blog/${slug}`,
+      url: `/eventos/${slug}`,
       type: "article",
-      publishedTime: post.published_at,
-      authors: post.author?.name ? [post.author.name] : undefined,
-      images: post.thumbnail_url
-        ? [{ url: post.thumbnail_url, alt: post.title }]
+      publishedTime: event.published_at,
+      images: event.thumbnail_url
+        ? [{ url: event.thumbnail_url, alt: event.title }]
         : undefined,
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title: event.title,
       description,
-      images: post.thumbnail_url ? [post.thumbnail_url] : undefined,
+      images: event.thumbnail_url ? [event.thumbnail_url] : undefined,
     },
   };
 }
@@ -77,48 +75,40 @@ function formatDate(dateString: string) {
   });
 }
 
-export default async function BlogPostPage({
+export default async function EventPostPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await getPost(slug);
-  if (!post) notFound();
+  const event = await getEvent(slug);
+  if (!event) notFound();
 
-  const allTags = post.tags
-    ? post.tags.split(",").map((t) => t.trim()).filter(Boolean)
+  const allTags = event.tags
+    ? event.tags.split(",").map((t) => t.trim()).filter(Boolean)
     : [];
   const MAX_VISIBLE_TAGS = 5;
   const tags = allTags.slice(0, MAX_VISIBLE_TAGS);
   const extraTagsCount = allTags.length - tags.length;
 
-  const description = post.content
-    ? post.content.replace(/<[^>]*>/g, "").slice(0, 160).trim()
-    : (post.tags ?? "");
+  const description = event.content
+    ? event.content.replace(/<[^>]*>/g, "").slice(0, 160).trim()
+    : (event.tags ?? "");
 
-  const blogPostingSchema = {
+  const eventSchema = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
+    "@type": "Event",
+    name: event.title,
     description,
-    image: post.thumbnail_url || undefined,
-    datePublished: post.published_at,
-    author: {
-      "@type": "Person",
-      name: post.author?.name ?? "Equipo Prohabla",
-    },
-    publisher: {
+    image: event.thumbnail_url || undefined,
+    startDate: event.published_at,
+    organizer: {
       "@type": "Organization",
       name: "Prohabla",
-      logo: {
-        "@type": "ImageObject",
-        url: "/colaboran-trimmed/Prohabla.png",
-      },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `/blog/${slug}`,
+      "@id": `/eventos/${slug}`,
     },
   };
 
@@ -126,10 +116,9 @@ export default async function BlogPostPage({
     <div className="relative">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
       />
       <main>
-
         {/* Header — misma estructura que BlogHeader */}
         <section className="pt-8 md:pt-12 pb-12 md:pb-16">
           <div className="max-w-7xl mx-auto sm:px-16 px-4">
@@ -138,11 +127,11 @@ export default async function BlogPostPage({
               {/* Columna izquierda */}
               <div className="flex flex-col gap-6">
                 <Link
-                  href="/blog"
+                  href="/eventos"
                   className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-fit"
                 >
                   <ArrowLeft size={14} />
-                  Volver al blog
+                  Volver a eventos
                 </Link>
 
                 <div className="flex flex-col gap-4">
@@ -163,25 +152,23 @@ export default async function BlogPostPage({
                   )}
 
                   <h1 className="text-4xl md:text-5xl font-medium tracking-tight leading-tight text-navy">
-                    {post.title}
+                    {event.title}
                   </h1>
 
-                  <div className="flex items-center gap-2 text-base text-muted-foreground">
-                    {post.author?.name && <span>{post.author.name}</span>}
-                    {post.author?.name && post.published_at && <span>·</span>}
-                    {post.published_at && <span>{formatDate(post.published_at)}</span>}
-                  </div>
+                  {event.published_at && (
+                    <p className="text-base text-muted-foreground">{formatDate(event.published_at)}</p>
+                  )}
 
-                  <ShareButtons title={post.title} />
+                  <ShareButtons title={event.title} />
                 </div>
               </div>
 
-              {/* Columna derecha: thumbnail */}
-              {post.thumbnail_url && (
+              {/* Columna derecha: imagen (hoy 1 sola; listo para carrusel cuando el CRM entregue varias) */}
+              {event.thumbnail_url && (
                 <div className="relative aspect-video rounded-2xl overflow-hidden border border-border shadow-sm">
                   <Image
-                    src={post.thumbnail_url}
-                    alt={post.title}
+                    src={event.thumbnail_url}
+                    alt={event.title}
                     fill
                     unoptimized
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -195,18 +182,17 @@ export default async function BlogPostPage({
           </div>
         </section>
 
-        {/* Contenido del post */}
+        {/* Contenido del evento */}
         <section className="pb-16 md:pb-24">
           <div className="max-w-7xl mx-auto sm:px-16 px-4">
             <div className="max-w-3xl mx-auto">
               <div
                 className="blog-content"
-                dangerouslySetInnerHTML={{ __html: post.content }}
+                dangerouslySetInnerHTML={{ __html: event.content }}
               />
             </div>
           </div>
         </section>
-
       </main>
       <Footer />
     </div>

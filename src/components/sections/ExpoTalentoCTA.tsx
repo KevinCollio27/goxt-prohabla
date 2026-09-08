@@ -3,7 +3,8 @@
 import { useRef } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { proximoEvento } from "@/lib/eventos";
 
 export default function CTASection() {
   const ref = useRef(null);
@@ -27,16 +28,16 @@ export default function CTASection() {
             >
               <div className="flex flex-col gap-3 items-center text-center">
                 <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-navy">
-                  ¿Listo para ser parte de ExpoTalento 2026?
+                  ¿Listo para la <span className="text-primary">{proximoEvento.nombre}</span>?
                 </h2>
                 <p className="max-w-2xl mx-auto text-muted-foreground">
                   Conéctate con empresas, descubre oportunidades y da el siguiente paso en tu carrera profesional. ¡No pierdas la oportunidad de crecer!
                 </p>
               </div>
-              <a href="#ExpoTalentoHero" className="group relative">
+              <a href="/empleos" className="group relative">
                 <Button className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer">
                   <span className="relative z-10 transition-all duration-500">
-                    Estoy Interesado
+                    Ver Vacantes
                   </span>
                   <div className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
                     <ArrowUpRight size={16} />

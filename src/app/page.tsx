@@ -27,11 +27,15 @@ const eventJsonLd = {
       addressLocality: EVENT_INFO.addressLocality,
       addressCountry: EVENT_INFO.addressCountry,
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: EVENT_INFO.latitude,
-      longitude: EVENT_INFO.longitude,
-    },
+    ...(EVENT_INFO.latitude != null && EVENT_INFO.longitude != null
+      ? {
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: EVENT_INFO.latitude,
+            longitude: EVENT_INFO.longitude,
+          },
+        }
+      : {}),
   },
   organizer: {
     "@type": "Organization",

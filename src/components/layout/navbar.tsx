@@ -22,28 +22,22 @@ import { motion } from "motion/react";
 const navItems = [
   { title: "Inicio", href: "/" },
   { title: "Empleos", href: "/empleos" },
+  { title: "Eventos", href: "/eventos" },
   { title: "Contacto", href: "/confirmar" },
   { title: "Blog", href: "/blog" },
 ];
 
 const LogoLockup = () => (
-  <a href="/" className="flex items-center gap-3">
+  <a href="/" className="flex items-center">
     <Image
-      src="/Logo ExpoTalento.png"
-      alt="ExpoTalento"
-      width={40}
-      height={40}
-      className="rounded-full"
+      src="/colaboran-trimmed/Prohabla.png"
+      alt="Prohabla"
+      width={140}
+      height={46}
+      style={{ width: "auto" }}
+      className="h-9 w-auto object-contain"
       priority
     />
-    <span className="flex flex-col leading-tight">
-      <span className="text-sm font-semibold text-navy">
-        ExpoTalento UTN 2026
-      </span>
-      <span className="text-xs text-muted-foreground">
-        Universidad Técnica Nacional
-      </span>
-    </span>
   </a>
 );
 

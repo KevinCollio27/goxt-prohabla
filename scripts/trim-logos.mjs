@@ -3,7 +3,7 @@ import path from "node:path";
 import sharp from "sharp";
 
 const PUBLIC_DIR = path.join(process.cwd(), "public");
-const FOLDERS = ["empresas", "colaboran"];
+const FOLDERS = ["empresas", "colaboran", "Logos Empresas SC"];
 
 async function trimFolder(folder) {
   const srcDir = path.join(PUBLIC_DIR, folder);

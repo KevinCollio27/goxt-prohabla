@@ -37,13 +37,13 @@ export default function PowerSkillsStats() {
         <div className="flex flex-col gap-4">
           <Badge className="text-sm h-auto py-1 px-3 border-0 w-fit gap-2 bg-secondary text-navy">
             <span className="size-1.5 rounded-full bg-primary" />
-            Estadísticas ExpoTalento 2026
+            Estadísticas Prohabla 2026
           </Badge>
           <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-navy">
-            La brecha es real
+            La <span className="text-primary">brecha</span> es real
           </h2>
           <p className="text-muted-foreground">
-            En Costa Rica, miles de jóvenes buscan su primera oportunidad mientras las empresas necesitan talento calificado.
+            En Costa Rica, miles de jóvenes buscan su primera oportunidad mientras las empresas necesitan talento calificado. En Prohabla cerramos esa brecha.
           </p>
         </div>
 

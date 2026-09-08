@@ -3,9 +3,9 @@ import ExpoTalentoContact from "@/components/sections/expo-talento-contact";
 import Footer from "@/components/sections/ExpoTalentoFooter";
 
 export const metadata: Metadata = {
-  title: "Confirma tu asistencia | ExpoTalento UTN 2026",
+  title: "Contacto",
   description:
-    "Confirma tu asistencia a la Feria ExpoTalento 2026. Miércoles 29 de julio, 9:00 am – 3:00 pm, UTN Alajuela.",
+    "¿Tienes dudas o consultas? Escríbenos y el equipo de Prohabla te ayuda.",
 };
 
 export default function ConfirmarPage() {

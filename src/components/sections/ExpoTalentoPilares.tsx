@@ -35,13 +35,13 @@ export default function PowerSkillsPillars() {
         <div className="flex flex-col gap-3 text-center items-center mb-12">
           <Badge className="text-sm h-auto py-1 px-3 border-0 w-fit gap-2 bg-secondary text-navy">
             <span className="size-1.5 rounded-full bg-primary" />
-            Un evento, una oportunidad
+            Acerca de Prohabla
           </Badge>
           <h2 className="text-balance text-4xl font-medium tracking-tight md:text-5xl text-navy">
-            ¿Qué es ExpoTalento?
+            ¿Qué es <span className="text-primary">Prohabla</span>?
           </h2>
-          <p className="text-muted-foreground max-w-md">
-            La feria que conecta a estudiantes, egresados y empresas en un mismo lugar, con oportunidades reales de crecimiento profesional.
+          <p className="text-muted-foreground max-w-xl">
+            Un equipo que impulsa ferias de empleo en distintos puntos de Costa Rica, incentivando a que las empresas publiquen sus oportunidades laborales para que los jóvenes profesionales interesados puedan postular.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export default function PowerSkillsPillars() {
           {pillars.map((pillar) => (
             <div
               key={pillar.id}
-              className="flex flex-col gap-4 rounded-2xl border border-border border-l-4 border-l-sky bg-white p-8 shadow-md"
+              className="flex flex-col gap-4 rounded-2xl border border-border border-l-4 border-l-primary bg-white p-8 shadow-md"
             >
               <div className="flex size-12 items-center justify-center rounded-full bg-navy">
                 <span className="text-white">{pillar.icon}</span>

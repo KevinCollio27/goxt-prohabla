@@ -11,10 +11,10 @@ export default function ExpoTalentoContact() {
           <div className="flex flex-1 flex-col gap-10">
             <div>
               <h1 className="mb-4 text-4xl font-medium tracking-tight md:text-5xl text-navy">
-                ¿Tienes dudas o consultas?
+                ¿Tienes dudas o <span className="text-primary">consultas</span>?
               </h1>
               <p className="text-muted-foreground">
-                ¿Necesitás contactar con alguien del equipo de ExpoTalento? Escribenos y con gusto te ayudamos.
+                ¿Necesitás contactar con alguien del equipo de Prohabla? Escribenos y con gusto te ayudamos.
               </p>
             </div>
           </div>
@@ -22,11 +22,11 @@ export default function ExpoTalentoContact() {
           {/* Columna derecha — formulario */}
           <div className="flex flex-1 flex-col gap-8">
             <iframe
-              src="https://crm.goxt.io/widget/form/formulario-de-confirmacin-de-asistencia-a-expotalento-2026"
+              src="https://crm.goxt.io/widget/form/formulario-de-contactos"
               width="100%"
-              height="850"
+              height="1000"
               style={{ border: "none", borderRadius: "16px" }}
-              title="Formulario de Confirmación asistencia a ExpoTalento 2026."
+              title="Formulario de Contacto - Prohabla Website"
             />
           </div>
         </div>

@@ -5,7 +5,7 @@ import { getVacantes } from "@/lib/vacantes-source";
 import { DEFAULT_LOGO_URL } from "@/lib/vacantes";
 
 export const runtime = "nodejs";
-export const alt = "Vacante disponible - ExpoTalento UTN 2026";
+export const alt = "Vacante disponible - Prohabla 2026";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -65,22 +65,22 @@ export default async function OpengraphImage({ params }: OpengraphImageProps) {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-          <div style={{ display: "flex", fontSize: 32, color: "#f5871f", fontWeight: 600 }}>
+          <div style={{ display: "flex", fontSize: 32, color: "#c41e1e", fontWeight: 600 }}>
             {empresa}
           </div>
           <div
             style={{
               display: "flex",
               fontSize: 52,
-              color: "#1b2a5e",
+              color: "#000000",
               fontWeight: 600,
               lineHeight: 1.15,
             }}
           >
             {tituloPuesto}
           </div>
-          <div style={{ display: "flex", fontSize: 26, color: "#64748b" }}>
-            ExpoTalento 2026 · Oportunidades de Empleo
+          <div style={{ display: "flex", fontSize: 26, color: "#737373" }}>
+            Prohabla 2026 · Oportunidades de Empleo
           </div>
         </div>
       </div>

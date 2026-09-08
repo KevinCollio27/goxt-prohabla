@@ -64,40 +64,40 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1b2a5e;
+  --foreground: #000000;
   --card: #ffffff;
-  --card-foreground: #1b2a5e;
+  --card-foreground: #000000;
   --popover: #ffffff;
-  --popover-foreground: #1b2a5e;
-  --primary: #f5871f;
+  --popover-foreground: #000000;
+  --primary: #c41e1e;
   --primary-foreground: #ffffff;
   --secondary: #d9d9d9;
-  --secondary-foreground: #1b2a5e;
+  --secondary-foreground: #000000;
   --muted: #d9d9d9;
-  --muted-foreground: #64748b;
+  --muted-foreground: #737373;
   --accent: #7ec2e8;
-  --accent-foreground: #1b2a5e;
+  --accent-foreground: #000000;
   --destructive: oklch(0.577 0.245 27.325);
   --border: #d9d9d9;
   --input: #d9d9d9;
-  --ring: #f5871f;
-  --chart-1: #1b2a5e;
+  --ring: #c41e1e;
+  --chart-1: #000000;
   --chart-2: #7ec2e8;
-  --chart-3: #f5871f;
+  --chart-3: #c41e1e;
   --chart-4: #d9d9d9;
-  --chart-5: #64748b;
+  --chart-5: #737373;
   --radius: 0.625rem;
   --sidebar: #ffffff;
-  --sidebar-foreground: #1b2a5e;
-  --sidebar-primary: #1b2a5e;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #000000;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #d9d9d9;
-  --sidebar-accent-foreground: #1b2a5e;
+  --sidebar-accent-foreground: #000000;
   --sidebar-border: #d9d9d9;
-  --sidebar-ring: #f5871f;
+  --sidebar-ring: #c41e1e;
 
   /* Marca ExpoTalento / Prohabla — no ligadas al set estándar de shadcn */
-  --navy: #1b2a5e;
+  --navy: #000000;
   --sky: #7ec2e8;
   --form-dark: #12172b;
 }

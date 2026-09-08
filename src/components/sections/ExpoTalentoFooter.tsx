@@ -2,7 +2,9 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { getLogos } from "@/lib/logos";
 
-const COLABORADORES = getLogos("colaboran-trimmed");
+const COLABORADORES = getLogos("colaboran-trimmed").filter(
+  (logo) => logo.name !== "Prohabla"
+);
 
 const FacebookIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,22 +83,15 @@ const Footer = () => {
             {/* Logo + tagline + redes */}
             <div className="col-span-full lg:col-span-4">
               <div className="flex flex-col gap-6 ">
-                <a href="/" className="flex items-center gap-3">
+                <a href="/" className="flex items-center">
                   <Image
-                    src="/Logo ExpoTalento.png"
-                    alt="ExpoTalento"
-                    width={50}
-                    height={50}
-                    className="rounded-full"
+                    src="/colaboran-trimmed/Prohabla.png"
+                    alt="Prohabla"
+                    width={140}
+                    height={46}
+                    style={{ width: "auto" }}
+                    className="h-9 w-auto object-contain"
                   />
-                  <span className="flex flex-col leading-tight">
-                    <span className="text-sm font-semibold text-navy">
-                      ExpoTalento UTN 2026
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      Universidad Técnica Nacional
-                    </span>
-                  </span>
                 </a>
                 <p className="text-base font-normal text-muted-foreground text-justify">
                   Conectamos talento con oportunidades reales. Un espacio donde estudiantes, profesionales y empresas se encuentran para construir el futuro laboral de Costa Rica.
@@ -223,7 +218,7 @@ const Footer = () => {
           </div>
           <Separator orientation="horizontal" />
           <p className="text-sm font-normal text-muted-foreground text-center ">
-            © 2026 Feria ExpoTalento. Todos los derechos reservados.
+            © 2026 Prohabla. Todos los derechos reservados.
           </p>
         </div>
       </div>

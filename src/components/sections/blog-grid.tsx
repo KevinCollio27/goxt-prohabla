@@ -49,10 +49,10 @@ export default async function BlogGrid() {
         <div className="flex flex-col gap-4 mb-12">
           <Badge className="text-sm h-auto py-1 px-3 border-0 w-fit gap-2 bg-secondary text-navy">
             <span className="size-1.5 rounded-full bg-primary" />
-            Novedades ExpoTalento
+            Novedades Prohabla
           </Badge>
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-navy">
-            Lo último del blog
+            Lo último del <span className="text-primary">blog</span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg">
             Artículos, guías y recursos para tu búsqueda de empleo o el reclutamiento de talento.

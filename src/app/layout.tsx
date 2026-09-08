@@ -13,15 +13,15 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "ExpoTalento 2026 - UTN",
-    template: "%s | ExpoTalento 2026",
+    default: "Prohabla 2026",
+    template: "%s | Prohabla 2026",
   },
   description: SITE_DESCRIPTION,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "ExpoTalento 2026 - UTN",
+    title: "Prohabla 2026",
     description: SITE_DESCRIPTION,
     url: "/",
     siteName: SITE_NAME,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ExpoTalento 2026 - UTN",
+    title: "Prohabla 2026",
     description: SITE_DESCRIPTION,
   },
   robots: {

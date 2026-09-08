@@ -55,10 +55,10 @@ export default function Testimonials() {
                 >
                     <Badge className="text-sm h-auto py-1 px-3 border-0 w-fit gap-2 bg-secondary text-navy">
                         <span className="size-1.5 rounded-full bg-primary" />
-                        Feria de Empleo ExpoTalento 2026
+                        Ferias de Empleo Prohabla
                     </Badge>
                     <h2 className="text-3xl md:text-5xl leading-none font-medium tracking-tight text-navy">
-                        Casos reales de Éxito
+                        Casos reales de <span className="text-primary">Éxito</span>
                     </h2>
                 </motion.div>
 

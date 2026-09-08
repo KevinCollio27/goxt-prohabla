@@ -19,6 +19,8 @@ import {
   formatRelativeDate,
   getInitials,
   joinNonEmpty,
+  toSentenceCase,
+  toTitleCase,
   type Vacante,
 } from "@/lib/vacantes";
 import { SITE_URL } from "@/lib/site-config";
@@ -52,11 +54,11 @@ export function VacancyPreview({ vacante }: VacancyPreviewProps) {
             </AvatarFallback>
           </Avatar>
           <div className="min-w-0">
-            <p className="text-sm font-medium text-muted-foreground">{vacante.empresa}</p>
-            <h2 className="text-2xl font-semibold text-navy">{vacante.tituloPuesto}</h2>
+            <p className="text-sm font-medium text-muted-foreground">{toTitleCase(vacante.empresa)}</p>
+            <h2 className="text-2xl font-semibold text-navy">{toTitleCase(vacante.tituloPuesto)}</h2>
             <p className="mt-1 text-sm text-muted-foreground">
               {joinNonEmpty([
-                vacante.ubicacion,
+                toTitleCase(vacante.ubicacion),
                 formatList(vacante.modalidad, ""),
                 formatRelativeDate(vacante.fechaPublicacion),
               ])}
@@ -73,7 +75,7 @@ export function VacancyPreview({ vacante }: VacancyPreviewProps) {
             </DialogTrigger>
             <DialogContent className="flex h-[85vh] max-h-180 w-[calc(100%-2rem)] flex-col sm:max-w-3xl">
               <DialogHeader>
-                <DialogTitle>Postulando a: {vacante.tituloPuesto}</DialogTitle>
+                <DialogTitle>Postulando a: {toTitleCase(vacante.tituloPuesto)}</DialogTitle>
               </DialogHeader>
               <iframe
                 src={`${POSTULACION_FORM_URL}?ref=${vacante.id}&ref_label=${encodeURIComponent(vacante.tituloPuesto)}`}
@@ -92,7 +94,7 @@ export function VacancyPreview({ vacante }: VacancyPreviewProps) {
           </Dialog>
 
           <ShareButtons
-            title={vacante.tituloPuesto}
+            title={toTitleCase(vacante.tituloPuesto)}
             url={`${SITE_URL}/empleos/${vacante.id}`}
             className="mt-0 shrink-0"
             showLabel={false}
@@ -116,7 +118,7 @@ export function VacancyPreview({ vacante }: VacancyPreviewProps) {
           </Avatar>
           <p className="text-sm text-foreground">
             Puesto ofrecido por{" "}
-            <span className="font-semibold text-navy">{vacante.empresa}</span>
+            <span className="font-semibold text-navy">{toTitleCase(vacante.empresa)}</span>
           </p>
         </div>
 
@@ -124,13 +126,13 @@ export function VacancyPreview({ vacante }: VacancyPreviewProps) {
 
         <div className="flex flex-col gap-1.5">
           <h3 className="font-semibold text-navy">Descripción</h3>
-          <p className="text-sm leading-relaxed text-foreground">{vacante.descripcion}</p>
+          <p className="text-sm leading-relaxed text-foreground">{toSentenceCase(vacante.descripcion)}</p>
         </div>
 
         {vacante.requisitos && (
           <div className="mt-5 flex flex-col gap-1.5">
             <h3 className="font-semibold text-navy">Requisitos</h3>
-            <p className="text-sm leading-relaxed text-foreground">{vacante.requisitos}</p>
+            <p className="text-sm leading-relaxed text-foreground">{toSentenceCase(vacante.requisitos)}</p>
           </div>
         )}
 

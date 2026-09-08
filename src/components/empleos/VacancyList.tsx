@@ -13,6 +13,7 @@ import {
   getInitials,
   isVacanteNueva,
   joinNonEmpty,
+  toTitleCase,
   vacanteCierraProximo,
   type Vacante,
 } from "@/lib/vacantes";
@@ -90,15 +91,15 @@ export function VacancyList({ vacantes, selectedId, onSelect }: VacancyListProps
                 <div className="min-w-0 flex-1">
                   <div className="flex items-start justify-between gap-2">
                     <span className="line-clamp-2 min-w-0 font-semibold text-navy">
-                      {vacante.tituloPuesto}
+                      {toTitleCase(vacante.tituloPuesto)}
                     </span>
                     <span className="shrink-0 text-xs text-muted-foreground">
                       {formatRelativeDate(vacante.fechaPublicacion)}
                     </span>
                   </div>
-                  <p className="truncate text-sm text-foreground">{vacante.empresa}</p>
+                  <p className="truncate text-sm text-foreground">{toTitleCase(vacante.empresa)}</p>
                   <p className="truncate text-sm text-muted-foreground">
-                    {joinNonEmpty([vacante.ubicacion, formatList(vacante.modalidad, "")])}
+                    {joinNonEmpty([toTitleCase(vacante.ubicacion), formatList(vacante.modalidad, "")])}
                   </p>
 
                   {(isVacanteNueva(vacante) || vacanteCierraProximo(vacante)) && (

@@ -1,14 +1,15 @@
 import { ImageResponse } from "next/og";
 import fs from "node:fs";
 import path from "node:path";
+import { proximoEvento } from "@/lib/eventos";
 
 export const runtime = "nodejs";
-export const alt = "ExpoTalento UTN 2026 - Feria de empleo";
+export const alt = "Prohabla 2026 - Feria de empleo";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function OpengraphImage() {
-  const logoPath = path.join(process.cwd(), "public", "Logo ExpoTalento.png");
+  const logoPath = path.join(process.cwd(), "public", "colaboran-trimmed", "Prohabla.png");
   const logoSrc = `data:image/png;base64,${fs.readFileSync(logoPath).toString("base64")}`;
 
   return new ImageResponse(
@@ -21,7 +22,7 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #1b2a5e 0%, #1b2a5e 55%, #12172b 100%)",
+          background: "#000000",
         }}
       >
         <div
@@ -41,17 +42,19 @@ export default async function OpengraphImage() {
               boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
             }}
           >
-            <img src={logoSrc} width={280} height={280} />
+            <img src={logoSrc} width={420} height={137} style={{ objectFit: "contain" }} />
           </div>
           <div
             style={{
               display: "flex",
-              fontSize: 32,
-              color: "#7ec2e8",
+              fontSize: 30,
+              color: "#ffffff",
               fontWeight: 500,
+              textAlign: "center",
+              maxWidth: 900,
             }}
           >
-            Miércoles 29 de julio · UTN Alajuela · Entrada libre
+            {`${proximoEvento.diaSemana} ${proximoEvento.fecha} · ${proximoEvento.sede} · ${proximoEvento.entrada}`}
           </div>
         </div>
       </div>

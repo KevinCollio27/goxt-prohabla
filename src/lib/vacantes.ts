@@ -30,7 +30,7 @@ function haceDias(dias: number) {
   return new Date(Date.now() - dias * 24 * 60 * 60 * 1000).toISOString();
 }
 
-export const DEFAULT_LOGO_URL = "/Logo ExpoTalento.png";
+export const DEFAULT_LOGO_URL = "/colaboran-trimmed/Prohabla.png";
 
 export const GOXT_LOGO_URL = "/empresas-trimmed/goxt-negro_13032026183533.png";
 
@@ -360,6 +360,18 @@ export function formatList(values: string[], fallback = "No especificado"): stri
 
 export function joinNonEmpty(parts: (string | null | undefined)[], separator = " · "): string {
   return parts.filter((p): p is string => Boolean(p && p.trim())).join(separator);
+}
+
+export function toTitleCase(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/\p{L}+/gu, (word) => word.charAt(0).toUpperCase() + word.slice(1));
+}
+
+export function toSentenceCase(value: string): string {
+  const trimmed = value.trim();
+  return trimmed ? trimmed.charAt(0).toUpperCase() + trimmed.slice(1) : trimmed;
 }
 
 export function getInitials(name: string): string {
