@@ -20,9 +20,9 @@ interface EventPost {
 
 async function getEvent(slug: string): Promise<EventPost | null> {
   try {
-    // thumbnail_url es una URL pública estable (no expira): se puede revalidar
-    // cada cierto tiempo en vez de pedir siempre datos frescos.
-    const res = await fetch(`${EVENTS_API}/${slug}`, { next: { revalidate: 300 } });
+    // Sin cache: con revalidate, la primera visita tras editar en el CRM
+    // seguía viendo el evento viejo hasta la recarga siguiente.
+    const res = await fetch(`${EVENTS_API}/${slug}`, { cache: "no-store" });
     if (!res.ok) return null;
     const json = await res.json();
     return json.data ?? null;

@@ -15,9 +15,9 @@ interface EventPost {
 
 async function getEvents(): Promise<EventPost[]> {
   try {
-    // thumbnail_url es una URL pública estable (no expira), a diferencia del blog normal:
-    // se puede revalidar cada cierto tiempo en vez de pedir siempre datos frescos.
-    const res = await fetch(EVENTS_API, { next: { revalidate: 300 } });
+    // Sin cache: con revalidate, la primera visita tras publicar en el CRM
+    // seguía viendo la lista vieja hasta la recarga siguiente.
+    const res = await fetch(EVENTS_API, { cache: "no-store" });
     if (!res.ok) return [];
     const json = await res.json();
     return json.data?.posts ?? [];
